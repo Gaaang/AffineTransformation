@@ -120,9 +120,9 @@
             this.label13.Location = new System.Drawing.Point(8, 78);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(125, 17);
+            this.label13.Size = new System.Drawing.Size(265, 17);
             this.label13.TabIndex = 29;
-            this.label13.Text = "Положение точки";
+            this.label13.Text = "Положение точки относительно ребра";
             // 
             // groupBox4
             // 
@@ -142,10 +142,11 @@
             this.intersectionBtn.Location = new System.Drawing.Point(12, 80);
             this.intersectionBtn.Margin = new System.Windows.Forms.Padding(4);
             this.intersectionBtn.Name = "intersectionBtn";
-            this.intersectionBtn.Size = new System.Drawing.Size(156, 37);
+            this.intersectionBtn.Size = new System.Drawing.Size(274, 37);
             this.intersectionBtn.TabIndex = 27;
-            this.intersectionBtn.Text = "Найти";
+            this.intersectionBtn.Text = "Найти точку пересечения";
             this.intersectionBtn.UseVisualStyleBackColor = true;
+            this.intersectionBtn.Click += new System.EventHandler(this.intersectionBtn_Click);
             // 
             // intersectionTb
             // 
@@ -153,7 +154,7 @@
             this.intersectionTb.Margin = new System.Windows.Forms.Padding(4);
             this.intersectionTb.Name = "intersectionTb";
             this.intersectionTb.ReadOnly = true;
-            this.intersectionTb.Size = new System.Drawing.Size(155, 22);
+            this.intersectionTb.Size = new System.Drawing.Size(274, 22);
             this.intersectionTb.TabIndex = 28;
             this.intersectionTb.Text = "Неизвестно";
             // 
@@ -163,9 +164,9 @@
             this.label12.Location = new System.Drawing.Point(8, 22);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(139, 17);
+            this.label12.Size = new System.Drawing.Size(183, 17);
             this.label12.TabIndex = 26;
-            this.label12.Text = "Точка пересечения";
+            this.label12.Text = "Точка пересечения рёбер";
             // 
             // groupBox3
             // 
@@ -194,13 +195,14 @@
             // 
             // ResetBtn
             // 
-            this.ResetBtn.Location = new System.Drawing.Point(10, 173);
+            this.ResetBtn.Location = new System.Drawing.Point(15, 173);
             this.ResetBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ResetBtn.Name = "ResetBtn";
             this.ResetBtn.Size = new System.Drawing.Size(120, 37);
             this.ResetBtn.TabIndex = 24;
             this.ResetBtn.Text = "Сброс";
             this.ResetBtn.UseVisualStyleBackColor = true;
+            this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
             // 
             // numericUpDown5
             // 
@@ -304,13 +306,14 @@
             // 
             // applyBtn
             // 
-            this.applyBtn.Location = new System.Drawing.Point(145, 173);
+            this.applyBtn.Location = new System.Drawing.Point(152, 175);
             this.applyBtn.Margin = new System.Windows.Forms.Padding(4);
             this.applyBtn.Name = "applyBtn";
             this.applyBtn.Size = new System.Drawing.Size(120, 37);
             this.applyBtn.TabIndex = 11;
             this.applyBtn.Text = "Применить";
             this.applyBtn.UseVisualStyleBackColor = true;
+            this.applyBtn.Click += new System.EventHandler(this.applyBtn_Click);
             // 
             // label1
             // 
@@ -406,15 +409,16 @@
             this.groupBox2.Size = new System.Drawing.Size(294, 134);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Выберите примитив";
             // 
             // pointChk
             // 
             this.pointChk.Appearance = System.Windows.Forms.Appearance.Button;
             this.pointChk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pointChk.Location = new System.Drawing.Point(19, 23);
+            this.pointChk.Location = new System.Drawing.Point(15, 23);
             this.pointChk.Margin = new System.Windows.Forms.Padding(4);
             this.pointChk.Name = "pointChk";
-            this.pointChk.Size = new System.Drawing.Size(89, 64);
+            this.pointChk.Size = new System.Drawing.Size(81, 64);
             this.pointChk.TabIndex = 6;
             this.pointChk.Text = "Точка";
             this.pointChk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -425,10 +429,10 @@
             // 
             this.edgeChk.Appearance = System.Windows.Forms.Appearance.Button;
             this.edgeChk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.edgeChk.Location = new System.Drawing.Point(116, 23);
+            this.edgeChk.Location = new System.Drawing.Point(104, 23);
             this.edgeChk.Margin = new System.Windows.Forms.Padding(4);
             this.edgeChk.Name = "edgeChk";
-            this.edgeChk.Size = new System.Drawing.Size(76, 64);
+            this.edgeChk.Size = new System.Drawing.Size(88, 64);
             this.edgeChk.TabIndex = 4;
             this.edgeChk.Text = "Отрезок";
             this.edgeChk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
