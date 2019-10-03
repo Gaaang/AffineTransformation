@@ -17,7 +17,7 @@ namespace AffineTransformations
         private Graphics g;
         private PointF clickedPoint = new PointF(0, 0); //точка по щелчку
         private Point[] edge = new Point[2]; //ребро
-        private Point[] polygon = new Point[0];//полигон
+        private Point[] polygon = new Point[0];//массив вершин
         private Pen penColor = Pens.Black;
         private Point startPoint = Point.Empty, endPoint = Point.Empty;
         private Point minPolyCoordinates, maxPolyCoordinates;
@@ -296,7 +296,6 @@ namespace AffineTransformations
                 PointF intersection = findIntersection(polygon[i], polygon[next], p, extreme);
                 if (intersection.X != -1)
                 {
-                    //проверяем колинеарна ли точка линиям сегмента i-next,если да,то проверяем лежит ли она на них
                     if (orientation(polygon[i], p, polygon[next]) == 0)
                         return onSegment(polygon[i], p, polygon[next]);
                     count++;
@@ -321,11 +320,11 @@ namespace AffineTransformations
             PointF s2 = new PointF();
             s1.X = p1.X - p0.X; s1.Y = p1.Y - p0.Y;
             s2.X = p3.X - p2.X; s2.Y = p3.Y - p2.Y;
-            float s, t;//тангенс,отношения углов...
+            float s, t;
             s = (-s1.Y * (p0.X - p2.X) + s1.X * (p0.Y - p2.Y)) / (-s2.X * s1.Y + s1.X * s2.Y);
             t = (s2.X * (p0.Y - p2.Y) - s2.Y * (p0.X - p2.X)) / (-s2.X * s1.Y + s1.X * s2.Y);
 
-            if (s >= 0 && s <= 1 && t >= 0 && t <= 1)
+            if (s >= 0 && s <= 1 && t >= 0 && t <= 1)//если не параллельны,не совпадают,а пересекаются
             {
                 i.X = p0.X + (t * s1.X);
                 i.Y = p0.Y + (t * s1.Y);
@@ -333,7 +332,6 @@ namespace AffineTransformations
             }
             return i;
         }
-
 
         int orientation(PointF p, PointF q, PointF r)
         {
